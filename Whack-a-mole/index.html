@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Whack-a-Mole</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+ 
+  <div class="container">
+ 
+    <header>
+      <h1>WHACK&#8209;A&#8209;MOLE</h1>
+      <p class="tagline">&#9889; underground mayhem &#9889;</p>
+    </header>
+ 
+    <div class="scoreboard">
+      <div class="score-box" id="scoreBox">
+        <div class="s-label">SCORE</div>
+        <div class="s-value" id="scoreEl">0</div>
+      </div>
+      <div class="score-box time-box">
+        <div class="s-label">TIME</div>
+        <div class="s-value" id="timeEl">30</div>
+      </div>
+      <div class="score-box">
+        <div class="s-label">BEST</div>
+        <div class="s-value" id="bestEl">0</div>
+      </div>
+    </div>
+ 
+    <div class="progress-wrap">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+ 
+    <div class="combo-wrap" aria-live="polite">
+      <span class="combo-msg" id="comboMsg"></span>
+    </div>
+ 
+    <button class="btn-start" id="btnStart">&#9654; START GAME</button>
+ 
+    <div class="board" id="board">
+      <div class="hole" data-i="0"><div class="mole-wrap"><div class="mole" id="m0"><span class="mface">&#128049;</span><span class="mface-bonk">&#128565;</span></div></div></div>
+      <div class="hole" data-i="1"><div class="mole-wrap"><div class="mole" id="m1"><span class="mface">&#128049;</span><span class="mface-bonk">&#128565;</span></div></div></div>
+      <div class="hole" data-i="2"><div class="mole-wrap"><div class="mole" id="m2"><span class="mface">&#128049;</span><span class="mface-bonk">&#128565;</span></div></div></div>
+      <div class="hole" data-i="3"><div class="mole-wrap"><div class="mole" id="m3"><span class="mface">&#128049;</span><span class="mface-bonk">&#128565;</span></div></div></div>
+      <div class="hole" data-i="4"><div class="mole-wrap"><div class="mole" id="m4"><span class="mface">&#128049;</span><span class="mface-bonk">&#128565;</span></div></div></div>
+      <div class="hole" data-i="5"><div class="mole-wrap"><div class="mole" id="m5"><span class="mface">&#128049;</span><span class="mface-bonk">&#128565;</span></div></div></div>
+      <div class="hole" data-i="6"><div class="mole-wrap"><div class="mole" id="m6"><span class="mface">&#128049;</span><span class="mface-bonk">&#128565;</span></div></div></div>
+      <div class="hole" data-i="7"><div class="mole-wrap"><div class="mole" id="m7"><span class="mface">&#128049;</span><span class="mface-bonk">&#128565;</span></div></div></div>
+      <div class="hole" data-i="8"><div class="mole-wrap"><div class="mole" id="m8"><span class="mface">&#128049;</span><span class="mface-bonk">&#128565;</span></div></div></div>
+    </div>
+ 
+  </div>
+ 
+  <!-- Game Over Overlay -->
+  <div class="overlay" id="overlay" aria-modal="true" role="dialog" aria-labelledby="ovTitle">
+    <div class="overlay-card">
+      <div class="ov-icon" id="ovIcon">&#127881;</div>
+      <h2 class="ov-title" id="ovTitle">GAME OVER</h2>
+      <div class="ov-score-wrap">
+        <span class="ov-label">YOUR SCORE</span>
+        <span class="ov-num" id="ovScore">0</span>
+      </div>
+      <p class="ov-best" id="ovBest"></p>
+      <button class="btn-start" id="btnAgain">&#9654; PLAY AGAIN</button>
+    </div>
+  </div>
+ 
+  <script src="script.js"></script>
+</body>
+</html>
+ 
