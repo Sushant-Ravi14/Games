@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Speed Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <div class="header">
+            <h1>Typing <span>Speed Test</span></h1>
+            <p>MEASURE &middot; IMPROVE &middot; COMPETE</p>
+        </div>
+ 
+        <div class="stats">
+            <div class="stat s-time" id="statTime">
+                <label>Time</label>
+                <div class="val" id="timerDisp">60</div>
+            </div>
+            <div class="stat s-wpm">
+                <label>WPM</label>
+                <div class="val" id="wpmDisp">—</div>
+            </div>
+            <div class="stat s-acc">
+                <label>Accuracy</label>
+                <div class="val" id="accDisp">—</div>
+            </div>
+            <div class="stat s-best">
+                <label>Best WPM</label>
+                <div class="val" id="bestDisp">0</div>
+            </div>
+        </div>
+ 
+        <div class="time-bar"><div class="time-fill" id="timeFill"></div></div>
+ 
+        <div class="text-box" id="textBox" tabindex="0">
+            <span class="placeholder">Click "Start Test" to begin — or press <span class="kbd">Space</span></span>
+        </div>
+        <textarea id="typingArea" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+ 
+        <div class="actions">
+            <button class="btn btn-primary" id="startBtn">Start Test</button>
+            <button class="btn btn-ghost" id="resetBtn">Reset Best</button>
+            <span class="kbd-hint">Press <span class="kbd">Tab</span> to restart mid-test</span>
+        </div>
+    </div>
+ 
+    <!-- Results Modal -->
+    <div class="modal-backdrop" id="modal">
+        <div class="modal">
+            <div class="progress-ring" id="progressRing"></div>
+            <h2 id="modalTitle">Test Complete!</h2>
+            <div class="grade" id="modalGrade">🏆</div>
+            <p id="newBestMsg" class="new-best" style="display:none">⭐ New personal best!</p>
+            <div class="modal-stats">
+                <div class="modal-stat"><label>WPM</label><div class="v purple" id="mWpm">0</div></div>
+                <div class="modal-stat"><label>Accuracy</label><div class="v green" id="mAcc">0%</div></div>
+                <div class="modal-stat"><label>Correct chars</label><div class="v amber" id="mChars">0</div></div>
+                <div class="modal-stat"><label>Best WPM</label><div class="v pink" id="mBest">0</div></div>
+            </div>
+            <button class="btn btn-primary" style="width:100%" id="retryBtn">Try Again</button>
+        </div>
+    </div>
+ 
+    <script src="script.js"></script>
+</body>
+</html>
